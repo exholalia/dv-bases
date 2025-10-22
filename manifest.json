@@ -1,11 +1,10 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "dv-bases",
+	"name": "Dataview Bases",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "Use Dataview queries to create dynamic bases for your vault.",
+	"author": "Echo Linker",
+	"authorUrl": "https://github.com/exholalia",
 	"isDesktopOnly": false
 }
