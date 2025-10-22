@@ -3,6 +3,9 @@
 	"version": "1.0.0",
 	"description": "Use Dataview queries to create dynamic bases for your vault.",
 	"main": "main.js",
+	"files": [
+		"lib/**/*"
+	],
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
 		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
