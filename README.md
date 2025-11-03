@@ -1,7 +1,15 @@
-# Obsidian Dataview Bases
-Run Dataview queries as formulae in your Bases!
+# Obsidian Task Bases
+Use Dataview to display your tasks in a Base!
+
+The eventual goal is to run Dataview queries as formulae in Bases, but we're starting small.
 
 Huge shout out to Michael "Tres" Brenan who created [Obsidian Dataview](https://github.com/blacksmithgu/obsidian-dataview), without that, we wouldn't have this.
+
+## TODO
+- [ ] Group by file.
+- [ ] Group by Obsidian Bases grouping.
+- [ ] CSS magic, maybe?
+- [ ] How can I add my own type of formula? Or even just any formula.
 
 ## Installation
 
