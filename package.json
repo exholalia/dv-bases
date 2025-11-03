@@ -21,13 +21,13 @@
 		"builtin-modules": "3.3.0",
 		"esbuild": "^0.25.11",
 		"obsidian": "latest",
+		"obsidian-dataview": "^0.5.68",
 		"obsidian-typings": "latest",
 		"tslib": "latest",
 		"typescript": "latest"
 	},
 	"dependencies": {
 		"install": "^0.13.0",
-		"npm": "^11.6.2",
-		"obsidian-dataview": "github:blacksmithgu/obsidian-dataview"
+		"npm": "^11.6.2"
 	}
 }

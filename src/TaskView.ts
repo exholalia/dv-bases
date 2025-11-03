@@ -1,49 +1,28 @@
-import { BasesView, QueryController } from "obsidian";
+import { BasesView, Component, QueryController } from "obsidian";
+import { getTasks } from "./util";
+import { getAPI } from "obsidian-dataview";
 
-export const TasksViewType = "tasks";
+export const TaskViewType = "tasks";
 
-export class TasksView extends BasesView {
-	type = TasksViewType;
+export class TaskView extends BasesView {
 	containerEl: HTMLElement;
+	readonly type = TaskViewType;
 
-	constructor(controller: QueryController, scrollEl: HTMLElement) {
+	constructor(controller: QueryController, parentEl: HTMLElement) {
 		super(controller);
-	}
-
-	onload(): void {
-
-	}
-
-	onunload() {
-
-	}
-
-	private async initializeTaskListView(): Promise<void> {
-
+		this.containerEl = parentEl.createDiv('bases-task-view-container');
 	}
 
 	public onDataUpdated(): void {
-		this.containerEl.removeClass('is-loading');
-		this.loadConfig();
-		void this.initializeMap().then(() => {
-			if (this.map && this.data) {
-				this.updateMarkers();
-			}
-		});
+		const tasks = [];
+		for (const file of this.data.data) {
+			const filePath = String(file.getValue("file.path"));
+			if (!filePath) continue;
+			tasks.push(...getTasks(filePath.slice(0, -3)));
+		}
+
+		this.containerEl.empty();
+		console.log("Rendering tasks:", tasks);
+		getAPI().taskList(tasks, false, this.containerEl, this);
 	}
-
-	private loadConfig(): void {
-		this.includeCompletedProp = this.config.getAsPropertyId('includeCompleted');
-
-	}
-
-	static getViewOptions() {
-		return [{
-			displayName: "Include Completed Tasks",
-			type: "toggle",
-			id: "includeCompleted",
-			default: false,
-		}];
-	}
-
 }
