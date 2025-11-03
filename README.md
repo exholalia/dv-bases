@@ -3,13 +3,24 @@ Run Dataview queries as formulae in your Bases!
 
 Huge shout out to Michael "Tres" Brenan who created [Obsidian Dataview](https://github.com/blacksmithgu/obsidian-dataview), without that, we wouldn't have this.
 
-## How to use
+## Installation
 
-- Clone this repo.
-- Make sure your NodeJS is at least v16 (`node --version`).
-- `npm i` or `yarn` to install dependencies.
-- `npm run dev` to start compilation in watch mode.
+### BRAT (Recommended)
 
-## Manually installing the plugin
+Until this plugin is made official, it can be installed via BRAT:
 
-- Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
+1. Install the BRAT plugin from "Community plugins" page.
+2. Go to the BRAT settings.
+3. Click the `Add beta plugin` button.
+4. Add this repository (https://github.com/exholalia/dv-bases) as a beta plugin.
+5. Select the latest release (or another release, if you wish).
+6. Click the `Add plugin` button.
+7. Enable the plugin.
+
+### Manually
+
+1. Clone this repo.
+2. Make sure your NodeJS is at least v16 (`node --version`).
+3. `npm i` or `yarn` to install dependencies.
+4. `npm run dev` to start compilation in watch mode.
+5. Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.

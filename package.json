@@ -1,8 +1,11 @@
 {
 	"name": "dv-bases",
 	"version": "1.0.0",
-	"description": "Use Dataview queries to create dynamic bases for your vault.",
+	"description": "Use Dataview queries to create dynamic bases for tasks in your vault.",
 	"main": "main.js",
+	"files": [
+		"lib/**/*"
+	],
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
 		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
@@ -12,18 +15,18 @@
 	"author": "",
 	"license": "MIT",
 	"devDependencies": {
-		"@types/node": "^16.11.6",
+		"@types/node": "latest",
 		"@typescript-eslint/eslint-plugin": "5.29.0",
 		"@typescript-eslint/parser": "5.29.0",
 		"builtin-modules": "3.3.0",
-		"esbuild": "0.17.3",
+		"esbuild": "^0.25.11",
 		"obsidian": "latest",
-		"tslib": "2.4.0",
-		"typescript": "4.7.4"
+		"obsidian-dataview": "^0.5.68",
+		"tslib": "latest",
+		"typescript": "latest"
 	},
 	"dependencies": {
 		"install": "^0.13.0",
-		"npm": "^11.6.2",
-		"obsidian-dataview": "github:blacksmithgu/obsidian-dataview"
+		"npm": "^11.6.2"
 	}
 }
