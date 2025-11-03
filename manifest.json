@@ -1,9 +1,9 @@
 {
 	"id": "dv-bases",
-	"name": "Dataview Bases",
+	"name": "Task Bases",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Use Dataview queries to create dynamic bases for your vault.",
+	"description": "Use Dataview queries to create dynamic bases for tasks in your vault.",
 	"author": "Echo Linker",
 	"authorUrl": "https://github.com/exholalia",
 	"isDesktopOnly": false

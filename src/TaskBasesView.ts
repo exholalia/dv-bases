@@ -1,12 +1,12 @@
-import { BasesView, Component, QueryController } from "obsidian";
+import { BasesView, QueryController } from "obsidian";
 import { getTasks } from "./util";
 import { getAPI } from "obsidian-dataview";
 
-export const TaskViewType = "tasks";
+export const TaskBasesViewType = "tasks";
 
-export class TaskView extends BasesView {
+export class TaskBasesView extends BasesView {
 	containerEl: HTMLElement;
-	readonly type = TaskViewType;
+	readonly type = TaskBasesViewType;
 
 	constructor(controller: QueryController, parentEl: HTMLElement) {
 		super(controller);

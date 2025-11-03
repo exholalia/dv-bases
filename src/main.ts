@@ -1,15 +1,13 @@
 import { Plugin, BasesViewFactory } from 'obsidian';
-import { TaskView, TaskViewType } from './TaskView';
+import { TaskBasesView, TaskBasesViewType } from './TaskBasesView';
 
-export default class DataviewBasesPlugin extends Plugin {
-
+export default class TaskBasesPlugin extends Plugin {
 	async onload() {
-
 		/* Register Task View */
 		const viewFactory: BasesViewFactory = (controller, containerEl) => {
-			return new TaskView(controller, containerEl);
+			return new TaskBasesView(controller, containerEl);
 		}
-		this.registerBasesView(TaskViewType, {
+		this.registerBasesView(TaskBasesViewType, {
 			name: 'Dataview Tasks',
 			icon: 'lucide-check-square',
 			factory: viewFactory

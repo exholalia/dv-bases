@@ -1,7 +1,7 @@
 {
 	"name": "dv-bases",
 	"version": "1.0.0",
-	"description": "Use Dataview queries to create dynamic bases for your vault.",
+	"description": "Use Dataview queries to create dynamic bases for tasks in your vault.",
 	"main": "main.js",
 	"files": [
 		"lib/**/*"
@@ -22,7 +22,6 @@
 		"esbuild": "^0.25.11",
 		"obsidian": "latest",
 		"obsidian-dataview": "^0.5.68",
-		"obsidian-typings": "latest",
 		"tslib": "latest",
 		"typescript": "latest"
 	},
