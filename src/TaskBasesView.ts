@@ -1,8 +1,10 @@
-import { BasesView, QueryController } from "obsidian";
+import { BasesView, QueryController, ToggleOption } from "obsidian";
 import { getTasks } from "./util";
-import { getAPI } from "obsidian-dataview";
+import { getAPI, DataviewApi } from "obsidian-dataview";
 
 export const TaskBasesViewType = "tasks";
+
+const dv: DataviewApi = getAPI();
 
 export class TaskBasesView extends BasesView {
 	containerEl: HTMLElement;
@@ -18,11 +20,26 @@ export class TaskBasesView extends BasesView {
 		for (const file of this.data.data) {
 			const filePath = String(file.getValue("file.path"));
 			if (!filePath) continue;
-			tasks.push(...getTasks(filePath.slice(0, -3)));
+			const fileName = filePath.replace(/\.([^.]+)$/, '');
+			if (fileName.includes('.')) continue;
+			tasks.push(...getTasks(fileName, this.config.get('show-completed-tasks') as boolean));
 		}
 
+
 		this.containerEl.empty();
-		console.log("Rendering tasks:", tasks);
-		getAPI().taskList(tasks, false, this.containerEl, this);
+		dv.taskList(tasks, false, this.containerEl, this);
+	}
+
+	public onConfigChanged(): void {
+		this.onDataUpdated();
 	}
 }
+
+const CompletedTasksOption: ToggleOption = {
+	type: 'toggle',
+	displayName: 'Show Completed Tasks',
+	key: 'show-completed-tasks',
+	default: false
+};
+
+export const TaskViewOptions = [CompletedTasksOption];

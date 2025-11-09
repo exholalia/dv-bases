@@ -1,5 +1,5 @@
 import { Plugin, BasesViewFactory } from 'obsidian';
-import { TaskBasesView, TaskBasesViewType } from './TaskBasesView';
+import { TaskBasesView, TaskViewOptions, TaskBasesViewType } from './TaskBasesView';
 
 export default class TaskBasesPlugin extends Plugin {
 	async onload() {
@@ -10,7 +10,8 @@ export default class TaskBasesPlugin extends Plugin {
 		this.registerBasesView(TaskBasesViewType, {
 			name: 'Dataview Tasks',
 			icon: 'lucide-check-square',
-			factory: viewFactory
+			factory: viewFactory,
+			options: () => TaskViewOptions
 		});
 	}
 }
