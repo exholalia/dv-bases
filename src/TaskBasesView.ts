@@ -25,9 +25,10 @@ export class TaskBasesView extends BasesView {
 			tasks.push(...getTasks(fileName, this.config.get('show-completed-tasks') as boolean));
 		}
 
+		const groupByFile = this.config.get('group-by-file') || false;
 
 		this.containerEl.empty();
-		dv.taskList(tasks, false, this.containerEl, this);
+		dv.taskList(tasks, groupByFile, this.containerEl, this);
 	}
 
 	public onConfigChanged(): void {
@@ -42,4 +43,11 @@ const CompletedTasksOption: ToggleOption = {
 	default: true
 };
 
-export const TaskViewOptions = [CompletedTasksOption];
+const GroupByFileOption: ToggleOption = {
+	type: 'toggle',
+	displayName: 'Group Tasks by File',
+	key: 'group-by-file',
+	default: false
+};
+
+export const TaskViewOptions = [CompletedTasksOption, GroupByFileOption];
