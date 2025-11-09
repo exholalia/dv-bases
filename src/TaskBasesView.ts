@@ -39,7 +39,7 @@ const CompletedTasksOption: ToggleOption = {
 	type: 'toggle',
 	displayName: 'Show Completed Tasks',
 	key: 'show-completed-tasks',
-	default: false
+	default: true
 };
 
 export const TaskViewOptions = [CompletedTasksOption];
